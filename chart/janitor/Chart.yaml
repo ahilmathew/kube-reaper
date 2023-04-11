@@ -1,0 +1,8 @@
+apiVersion: v2
+appVersion: "0.0.1"
+description: Clean up (delete) Kubernetes namespace resources after a configured TTL (time to live)
+name: janitor
+version: 0.0.1
+home: https://dev.azure.com/serko/DevOps/_git/serko.devops?path=/kubernetes-tools/janitor``
+sources:
+  - https://dev.azure.com/serko/DevOps/_git/serko.devops?path=/kubernetes-tools/janitor

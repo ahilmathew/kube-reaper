@@ -1,0 +1,16 @@
+apiVersion: v2
+entries:
+  janitor:
+  - apiVersion: v2
+    appVersion: 0.0.1
+    created: "2023-04-11T13:02:18.89806+12:00"
+    description: Clean up (delete) Kubernetes namespace resources after a configured TTL (time to live)
+    digest: 7bec942d8c1a2f4d11975ac987af6e15624a01bf6c4f57e29e6ab23badae1e9d
+    home: https://dev.azure.com/serko/DevOps/_git/serko.devops?path=/kubernetes-tools/janitor``
+    name: janitor
+    sources:
+    - https://dev.azure.com/serko/DevOps/_git/serko.devops?path=/kubernetes-tools/janitor
+    urls:
+    - janitor-0.0.1.tgz
+    version: 0.0.1
+generated: "2023-04-11T13:02:18.897073+12:00"
