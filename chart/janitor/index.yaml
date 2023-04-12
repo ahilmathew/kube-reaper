@@ -2,9 +2,49 @@ apiVersion: v1
 entries:
   janitor:
   - apiVersion: v2
+    appVersion: 0.0.4
+    created: "2023-04-12T02:57:50.478145957Z"
+    description: Clean up (delete) Kubernetes namespace resources after a configured
+      TTL (time to live)
+    digest: 003278bd1599f6ac5a5c8e3c2acee40d79d76c410ae5ff5c521022b442a61d3d
+    home: https://dev.azure.com/serko/DevOps/_git/serko.devops?path=/kubernetes-tools/janitor``
+    name: janitor
+    sources:
+    - https://dev.azure.com/serko/DevOps/_git/serko.devops?path=/kubernetes-tools/janitor
+    urls:
+    - janitor-0.0.4.tgz
+    version: 0.0.4
+  - apiVersion: v2
+    appVersion: 0.0.3
+    created: "2023-04-12T02:57:50.197580034Z"
+    description: Clean up (delete) Kubernetes namespace resources after a configured
+      TTL (time to live)
+    digest: 7589fb8d31b3985e9f90ccc18fc9bf988b59a9a922cce7f3c1a91c9975e7e409
+    home: https://dev.azure.com/serko/DevOps/_git/serko.devops?path=/kubernetes-tools/janitor``
+    name: janitor
+    sources:
+    - https://dev.azure.com/serko/DevOps/_git/serko.devops?path=/kubernetes-tools/janitor
+    urls:
+    - janitor-0.0.3.tgz
+    version: 0.0.3
+  - apiVersion: v2
+    appVersion: 0.0.2
+    created: "2023-04-12T02:57:50.195945418Z"
+    description: Clean up (delete) Kubernetes namespace resources after a configured
+      TTL (time to live)
+    digest: a9f25848a889d6355d5ce315490b372f61f041312b6238a7b154a34333e81d11
+    home: https://dev.azure.com/serko/DevOps/_git/serko.devops?path=/kubernetes-tools/janitor``
+    name: janitor
+    sources:
+    - https://dev.azure.com/serko/DevOps/_git/serko.devops?path=/kubernetes-tools/janitor
+    urls:
+    - janitor-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
     appVersion: 0.0.1
-    created: "2023-04-11T19:47:43.057771+12:00"
-    description: Clean up (delete) Kubernetes namespace resources after a configured TTL (time to live)
+    created: "2023-04-12T02:57:50.195122759Z"
+    description: Clean up (delete) Kubernetes namespace resources after a configured
+      TTL (time to live)
     digest: 35db302a9563567c9352915a309782df996824cf2620d0b4c37c7613db775a4e
     home: https://dev.azure.com/serko/DevOps/_git/serko.devops?path=/kubernetes-tools/janitor``
     name: janitor
@@ -13,4 +53,4 @@ entries:
     urls:
     - janitor-0.0.1.tgz
     version: 0.0.1
-generated: "2023-04-11T19:47:43.055471+12:00"
+generated: "2023-04-12T02:57:50.194353104Z"

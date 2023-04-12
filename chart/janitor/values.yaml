@@ -1,8 +1,7 @@
 image:
-  repository: npplstatecr/dc/janitor
-  tag: 0.0.1
+  repository: npplstatecr.azurecr.io/dc-janitor
+  tag: 8dcf067
   pullPolicy: IfNotPresent
-
 kubejanitor:
 cron:
   schedule: "*/5 * * * *"

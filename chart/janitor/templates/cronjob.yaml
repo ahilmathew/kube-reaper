@@ -23,6 +23,7 @@ spec:
       template:
         spec:
           serviceAccountName: {{ template "janitor.name" . }}
+          concurrencyPolicy: Forbid
           restartPolicy: {{ .Values.restartPolicy }}
           {{- if .Values.nodeSelector }}
           nodeSelector:
