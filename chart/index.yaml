@@ -2,11 +2,24 @@ apiVersion: v1
 entries:
   kube-reaper:
   - apiVersion: v2
-    appVersion: 0.0.1
-    created: "2023-08-03T23:18:56.878849+12:00"
+    appVersion: 0.0.2
+    created: "2023-08-03T23:21:18.503766+12:00"
     description: Clean up (delete) Kubernetes namespace resources after a configured
       TTL (time to live)
-    digest: a9104b5940881292b3554f12e5761073e9b943224c69de2438258033d20a2f54
+    digest: 1b9707fc3b46fc1bf05653019456651194f7b0830dc155c4d95eb6fecddec392
+    home: https://github.com/ahilmathew/kube-reaper
+    name: kube-reaper
+    sources:
+    - https://github.com/ahilmathew/kube-reaper
+    urls:
+    - kube-reaper-0.0.2.tgz
+    version: 0.0.2
+  - apiVersion: v2
+    appVersion: 0.0.2
+    created: "2023-08-03T23:21:18.503391+12:00"
+    description: Clean up (delete) Kubernetes namespace resources after a configured
+      TTL (time to live)
+    digest: 80554dbb91ecddfb20c8877bb2812199ca3102baeb48a0a724a5a920319ff78e
     home: https://github.com/ahilmathew/kube-reaper
     name: kube-reaper
     sources:
@@ -14,4 +27,4 @@ entries:
     urls:
     - kube-reaper-0.0.1.tgz
     version: 0.0.1
-generated: "2023-08-03T23:18:56.878597+12:00"
+generated: "2023-08-03T23:21:18.50298+12:00"
