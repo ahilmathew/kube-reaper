@@ -1,0 +1,58 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ template "janitor.name" . }}
+  labels:
+    app: {{ template "janitor.name" . }}
+    chart: {{ template "janitor.chart" . }}
+    release: {{ .Release.Name }}
+    heritage: {{ .Release.Service }}
+spec:
+  schedule: "{{ .Values.cron.schedule }}"
+  {{- if .Values.cron.successfulJobsHistoryLimit }}
+  successfulJobsHistoryLimit: {{ .Values.cron.successfulJobsHistoryLimit }}
+  {{- end }}
+  {{- if .Values.cron.failedJobsHistoryLimit }}
+  failedJobsHistoryLimit: {{ .Values.cron.failedJobsHistoryLimit }}
+  {{- end }}
+  {{- if .Values.cron.suspend }}
+  suspend: {{ .Values.cron.suspend }}
+  {{- end }}
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          serviceAccountName: {{ template "janitor.name" . }}
+          concurrencyPolicy: Forbid
+          restartPolicy: {{ .Values.restartPolicy }}
+          {{- if .Values.nodeSelector }}
+          nodeSelector:
+{{ toYaml .Values.nodeSelector | indent 12 }}
+          {{- end }}
+          {{- if .Values.affinity }}
+          affinity:
+{{ toYaml .Values.affinity | indent 12 }}
+          {{- end }}
+          {{- if .Values.tolerations }}
+          tolerations:
+{{ toYaml .Values.tolerations | indent 12 }}
+          {{- end }}
+          containers:
+          - name: {{ .Chart.Name }}
+            image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+            imagePullPolicy: {{ .Values.image.pullPolicy }}
+            {{- if .Values.resources }}
+            resources:
+{{ toYaml .Values.resources | indent 14 }}
+            {{- end }}
+            securityContext:
+              readOnlyRootFilesystem: true
+              runAsNonRoot: true
+<<<<<<< HEAD
+              runAsUser: 1000
+          tolerations:
+            - key: "kubernetes.azure.com/scalesetpriority"
+              operator: "Exists"
+=======
+              runAsUser: 1000
+>>>>>>> 6e222a927ed1716a094ed0475b153505f5df6273

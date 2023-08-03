@@ -19,7 +19,7 @@ import (
 )
 
 const (
-	expiryAnnotationKey = "janitor/expires"
+	expiryAnnotationKey = "kube-reaper/expires"
 )
 
 // Decide whether the tool is running locally or in a kube cluster

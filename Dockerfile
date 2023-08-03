@@ -12,9 +12,9 @@ RUN go mod download
 COPY *.go ./
 
 # Build
-RUN CGO_ENABLED=0 GOOS=linux go build -o /opt/janitor
+RUN CGO_ENABLED=0 GOOS=linux go build -o /opt/kube-reaper
 
 FROM alpine:latest as final
 WORKDIR /app
-COPY --from=builder /opt/janitor .
-ENTRYPOINT ["/app/janitor"]
+COPY --from=builder /opt/kube-reaper .
+ENTRYPOINT ["/app/kube-reaper"]

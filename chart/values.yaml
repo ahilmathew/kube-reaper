@@ -1,0 +1,16 @@
+image:
+  repository: ahilmathew/kube-reaper
+  tag: 0.1
+  pullPolicy: IfNotPresent
+kubejanitor:
+cron:
+  schedule: "*/5 * * * *"
+  failedJobsHistoryLimit: 5
+  successfulJobsHistoryLimit: 3
+restartPolicy: OnFailure
+resources:
+  limits:
+    memory: 100Mi
+  requests:
+    cpu: 5m
+    memory: 100Mi
