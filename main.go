@@ -91,7 +91,7 @@ func performNamespaceOperations(clientset *kubernetes.Clientset) {
 		hasPrefix := checkPrefixes(ns.Name)
 		if hasPrefix {
 			if len(expiryTimeStr) > 0 {
-				expiryTime, err := time.Parse(time.RFC3339, getExpiryTime(ns))
+				expiryTime, err := time.Parse("2006-01-02T15:04", getExpiryTime(ns))
 				if err != nil {
 					fmt.Fprintf(os.Stderr, "Failed to parse expiry time annotation %q for namespace %q: %v\n", expiryTimeStr, ns.Name, err)
 					continue

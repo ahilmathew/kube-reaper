@@ -1,0 +1,16 @@
+image:
+  repository: npplstatecr.azurecr.io/dc-janitor
+  tag: 0b1afef
+  pullPolicy: IfNotPresent
+kubejanitor:
+cron:
+  schedule: "*/5 * * * *"
+  failedJobsHistoryLimit: 5
+  successfulJobsHistoryLimit: 3
+restartPolicy: OnFailure
+resources:
+  limits:
+    memory: 100Mi
+  requests:
+    cpu: 5m
+    memory: 100Mi
