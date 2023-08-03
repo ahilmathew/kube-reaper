@@ -8,6 +8,7 @@ metadata:
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
+  concurrencyPolicy: Forbid
   schedule: "{{ .Values.cron.schedule }}"
   {{- if .Values.cron.successfulJobsHistoryLimit }}
   successfulJobsHistoryLimit: {{ .Values.cron.successfulJobsHistoryLimit }}
