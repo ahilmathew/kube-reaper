@@ -2,7 +2,7 @@ image:
   repository: ahilmathew/kube-reaper
   tag: 0.1
   pullPolicy: IfNotPresent
-kubejanitor:
+kubereaper:
 cron:
   schedule: "*/5 * * * *"
   failedJobsHistoryLimit: 5

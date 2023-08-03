@@ -1,10 +1,10 @@
 apiVersion: batch/v1
 kind: CronJob
 metadata:
-  name: {{ template "janitor.name" . }}
+  name: {{ template "reaper.name" . }}
   labels:
-    app: {{ template "janitor.name" . }}
-    chart: {{ template "janitor.chart" . }}
+    app: {{ template "reaper.name" . }}
+    chart: {{ template "reaper.chart" . }}
     release: {{ .Release.Name }}
     heritage: {{ .Release.Service }}
 spec:
@@ -23,7 +23,7 @@ spec:
     spec:
       template:
         spec:
-          serviceAccountName: {{ template "janitor.name" . }}
+          serviceAccountName: {{ template "reaper.name" . }}
           restartPolicy: {{ .Values.restartPolicy }}
           {{- if .Values.nodeSelector }}
           nodeSelector:
