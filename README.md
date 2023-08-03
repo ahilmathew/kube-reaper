@@ -13,7 +13,7 @@ kube-reaper/expires: 2024-05-03T13:32
 Install the chart directly into your kubernetes cluster using - 
 
 ```
-helm repo add kube-reaper https://raw.githubusercontent.com/ahilmathew/kube-reaper/main/chart/janitor
+helm repo add kube-reaper https://raw.githubusercontent.com/ahilmathew/kube-reaper/main/chart
 
 helm upgrade --install kube-reaper kube-reaper/kube-reaper 
 ```

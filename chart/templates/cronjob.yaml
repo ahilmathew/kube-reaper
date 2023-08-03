@@ -48,11 +48,4 @@ spec:
             securityContext:
               readOnlyRootFilesystem: true
               runAsNonRoot: true
-<<<<<<< HEAD
               runAsUser: 1000
-          tolerations:
-            - key: "kubernetes.azure.com/scalesetpriority"
-              operator: "Exists"
-=======
-              runAsUser: 1000
->>>>>>> 6e222a927ed1716a094ed0475b153505f5df6273
