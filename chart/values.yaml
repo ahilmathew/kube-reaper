@@ -1,7 +1,7 @@
 image:
   repository: ahilmathew/kube-reaper
-  tag: 0.1
-  pullPolicy: IfNotPresent
+  tag: 0.2
+  pullPolicy: Always
 kubereaper:
 cron:
   schedule: "*/5 * * * *"
