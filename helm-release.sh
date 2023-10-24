@@ -1,0 +1,1 @@
+helm package . && helm repo index . && helm package .
