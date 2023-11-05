@@ -88,33 +88,28 @@ func performNamespaceOperations(clientset *kubernetes.Clientset) {
 	fmt.Printf("There are %d namespaces in the cluster\n", len(namespaces.Items))
 	for _, ns := range namespaces.Items {
 		expiryTimeStr := getExpiryTime(ns)
-		hasPrefix := checkPrefixes(ns.Name)
-		if hasPrefix {
-			if len(expiryTimeStr) > 0 {
-				expiryTime, err := time.Parse("2006-01-02T15:04", getExpiryTime(ns))
+		if len(expiryTimeStr) > 0 {
+			expiryTime, err := time.Parse("2006-01-02T15:04", getExpiryTime(ns))
+			if err != nil {
+				fmt.Fprintf(os.Stderr, "Failed to parse expiry time annotation %q for namespace %q: %v\n", expiryTimeStr, ns.Name, err)
+				continue
+			}
+			if time.Now().After(expiryTime) {
+				fmt.Printf("Deleting expired namespace %q\n", ns.Name)
+				err = clientset.CoreV1().Namespaces().Delete(context.TODO(), ns.Name, metav1.DeleteOptions{})
 				if err != nil {
-					fmt.Fprintf(os.Stderr, "Failed to parse expiry time annotation %q for namespace %q: %v\n", expiryTimeStr, ns.Name, err)
+					fmt.Fprintf(os.Stderr, "Failed to delete namespace %q: %v\n", ns.Name, err)
 					continue
 				}
-				if time.Now().After(expiryTime) {
-					fmt.Printf("Deleting expired namespace %q\n", ns.Name)
-					err = clientset.CoreV1().Namespaces().Delete(context.TODO(), ns.Name, metav1.DeleteOptions{})
-					if err != nil {
-						fmt.Fprintf(os.Stderr, "Failed to delete namespace %q: %v\n", ns.Name, err)
-						continue
-					}
-					fmt.Printf("Deleted expired namespace %q\n", ns.Name)
-				} else if time.Now().Before(expiryTime) {
-					fmt.Printf("Skipping namespace %q as expiry time is in the future. ", ns.Name)
-					ttl := time.Until(expiryTime)
-					loc, _ := time.LoadLocation("Local")
-					fmt.Printf("%q has %q until expiry (%q)\n", ns.Name, ttl, expiryTime.In(loc))
-				}
-			} else {
-				fmt.Printf("Skipping namespace %q as no expiry time found\n", ns.Name)
+				fmt.Printf("Deleted expired namespace %q\n", ns.Name)
+			} else if time.Now().Before(expiryTime) {
+				fmt.Printf("Skipping namespace %q as expiry time is in the future. ", ns.Name)
+				ttl := time.Until(expiryTime)
+				loc, _ := time.LoadLocation("Local")
+				fmt.Printf("%q has %q until expiry (%q)\n", ns.Name, ttl, expiryTime.In(loc))
 			}
 		} else {
-			fmt.Printf("Skipping namespace %q as no prefix found in the name \n", ns.Name)
+			fmt.Printf("Skipping namespace %q as no expiry time found\n", ns.Name)
 		}
 	}
 }

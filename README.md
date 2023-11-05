@@ -18,3 +18,7 @@ helm repo add kube-reaper https://raw.githubusercontent.com/ahilmathew/kube-reap
 helm upgrade --install kube-reaper kube-reaper/kube-reaper 
 ```
 
+## Running locally
+
+1. `go build .`
+2. `LOCAL=true ./kube-reaper`
