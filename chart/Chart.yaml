@@ -1,8 +1,8 @@
 apiVersion: v2
-appVersion: "0.0.4"
+appVersion: "0.0.5"
 description: Clean up (delete) Kubernetes namespace resources after a configured TTL (time to live)
 name: kube-reaper
-version: 0.0.4
+version: 0.0.5
 home: https://github.com/ahilmathew/kube-reaper
 sources:
   - https://github.com/ahilmathew/kube-reaper
