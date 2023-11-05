@@ -1,6 +1,6 @@
 image:
   repository: ahilmathew/kube-reaper
-  tag: 0.2
+  tag: 1.0
   pullPolicy: Always
 kubereaper:
 cron:
