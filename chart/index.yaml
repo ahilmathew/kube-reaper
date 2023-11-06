@@ -2,11 +2,24 @@ apiVersion: v1
 entries:
   kube-reaper:
   - apiVersion: v2
-    appVersion: 0.0.5
-    created: "2023-11-06T11:02:18.729851+13:00"
+    appVersion: 0.0.6
+    created: "2023-11-06T14:36:51.301439+13:00"
     description: Clean up (delete) Kubernetes namespace resources after a configured
       TTL (time to live)
-    digest: c66184877da156304c4be0e0c2cc385a1351567c106ce2c67215dff4733389df
+    digest: b7d56bbc1e9c3471dd15673553998b58199d12bb42d92faf7666fcf166984d97
+    home: https://github.com/ahilmathew/kube-reaper
+    name: kube-reaper
+    sources:
+    - https://github.com/ahilmathew/kube-reaper
+    urls:
+    - kube-reaper-0.0.6.tgz
+    version: 0.0.6
+  - apiVersion: v2
+    appVersion: 0.0.5
+    created: "2023-11-06T14:36:51.301065+13:00"
+    description: Clean up (delete) Kubernetes namespace resources after a configured
+      TTL (time to live)
+    digest: 753a4d567a3583bc7a193cd2e15701020703858353709dda56ad7759acbd087c
     home: https://github.com/ahilmathew/kube-reaper
     name: kube-reaper
     sources:
@@ -16,7 +29,7 @@ entries:
     version: 0.0.5
   - apiVersion: v2
     appVersion: 0.0.4
-    created: "2023-11-06T11:02:18.725615+13:00"
+    created: "2023-11-06T14:36:51.297347+13:00"
     description: Clean up (delete) Kubernetes namespace resources after a configured
       TTL (time to live)
     digest: ee0468f665235e6ab609e0762414b23950c5ee7c1234355916db66c3f7207443
@@ -29,7 +42,7 @@ entries:
     version: 0.0.4
   - apiVersion: v2
     appVersion: 0.0.3
-    created: "2023-11-06T11:02:18.724341+13:00"
+    created: "2023-11-06T14:36:51.295211+13:00"
     description: Clean up (delete) Kubernetes namespace resources after a configured
       TTL (time to live)
     digest: 9235efddc367244b93a0e9eaaba966efb38dd400a5812f8537e17b19d468f65a
@@ -42,7 +55,7 @@ entries:
     version: 0.0.3
   - apiVersion: v2
     appVersion: 0.0.2
-    created: "2023-11-06T11:02:18.723645+13:00"
+    created: "2023-11-06T14:36:51.294395+13:00"
     description: Clean up (delete) Kubernetes namespace resources after a configured
       TTL (time to live)
     digest: a9c48e36a286d62f04dfd8b8ae535027c5568db830b7b5f5bdae4289a116970d
@@ -55,7 +68,7 @@ entries:
     version: 0.0.2
   - apiVersion: v2
     appVersion: 0.0.2
-    created: "2023-11-06T11:02:18.723151+13:00"
+    created: "2023-11-06T14:36:51.293786+13:00"
     description: Clean up (delete) Kubernetes namespace resources after a configured
       TTL (time to live)
     digest: 80554dbb91ecddfb20c8877bb2812199ca3102baeb48a0a724a5a920319ff78e
@@ -66,4 +79,4 @@ entries:
     urls:
     - kube-reaper-0.0.1.tgz
     version: 0.0.1
-generated: "2023-11-06T11:02:18.722095+13:00"
+generated: "2023-11-06T14:36:51.293108+13:00"
